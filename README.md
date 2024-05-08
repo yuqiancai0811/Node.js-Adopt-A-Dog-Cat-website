@@ -21,5 +21,5 @@ This repository contains the code for a website dedicated to the adoption of dog
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/adopt-a-dog-cat-website.git
-   cd adopt-a-dog-cat-website
+   git clone git@github.com:yuqiancai0811/Node.js-Adopt-A-Dog-Cat-website.git
+   cd Adopt-A-Dog-Cat-Website
