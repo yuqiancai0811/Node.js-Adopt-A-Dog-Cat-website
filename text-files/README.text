@@ -1,0 +1,7 @@
+node ex1-server.js to check exercise1 (including all 4 functions) =>URL: http://soen287.encs.concordia.ca:5360/exercise1
+node numOfVisits.js to check exercise2 =>URL: http://soen287.encs.concordia.ca:5360/exercise2
+node ex3-server.js to check exercise3 =>URL: http://soen287.encs.concordia.ca:5360/exercise3
+node ex4-server.js to check exercise4 =>URL: http://soen287.encs.concordia.ca:5360/home
+All textfiles locate in the textfiles folder.(including user login file and avaliable pets file)
+All ejs files locate in the views folder. (only exercise1.ejs is for exercise1, others are all for exercise4)
+All css, images, js files are in the public folder.

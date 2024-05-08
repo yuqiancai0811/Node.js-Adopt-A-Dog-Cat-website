@@ -17,6 +17,18 @@ This repository contains the code for a website dedicated to the adoption of dog
 - **Node.js**: For server-side functionality.
 - **Express.js**: As the web application framework.
 
+## Project Structure
+- **ex4-server.js**: Main server file that you run to start the application.
+- **views/**: Directory containing EJS templates for the site.
+- **public/**: Contains static files like CSS, JavaScript, and images.
+- **textfiles/**: Contains all text files, including user login information and available pets details.
+- **routes/**: Contains route definitions for the application.
+
+## Files and Directories
+- **Text Files**: All text files, including user login and pet information, are located in the textfiles folder.
+- **EJS Files**: All EJS files are stored in the views folder to manage the views of the application.
+- **Static Files**: All CSS, images, and JS files are organized in the public folder to handle the static content of the website.
+
 ## Setup and Installation
 
 1. **Clone the repository:**

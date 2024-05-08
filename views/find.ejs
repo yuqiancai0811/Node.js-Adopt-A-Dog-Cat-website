@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adopt A Pet</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('header.ejs') %>
+    <%- include('navigation.ejs') %>
+    <main>
+        <h2>Find a Pet</h2>
+        <form id="searchForm" action="/find" method="post">
+            <!-- Pet Type -->
+            <label for="petType">Cat or Dog:</label>
+            <select id="petType" name="petType">
+                <option value="" disabled selected>Please select a pet type</option>
+                <option value="Cat">Cat</option>
+                <option value="Dog">Dog</option>
+            </select><br>
+
+            <!-- Breed -->
+            <label for="breed">Breed:</label>
+            <select id="breed" name="breed">
+                <option value="" disabled selected>Please select a pet breed</option>
+                <option value="Others">Others</option>
+                <option value="Mix">Mix</option>
+                <option value="Shorthair">Shorthair</option>
+                <option value="Longhair">Longhair</option>
+                <option value="Ragdoll">Ragdoll</option>
+                <option value="Shiba">Shiba</option>
+                <option value="Husky">Husky</option>
+            </select><br>
+
+            <!-- Age -->
+            <label for="age">Preferred Age:</label>
+            <select id="age" name="age">
+                <option value="" disabled selected>Please select an age range</option>
+                <option value="Any">Doesn't matter</option>
+                <option value="Puppy/Kitten">Puppy/Kitten</option>
+                <option value="Young">Young</option>
+                <option value="Adult">Adult</option>
+                <option value="Senior">Senior</option>
+            </select><br>
+
+            <!-- Gender -->
+            <label for="gender">Preferred Gender:</label>
+            <select id="gender" name="gender">
+                <option value="" disabled selected>Please select a gender</option>
+                <option value="Any">Doesn't matter</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select><br>
+
+            <!-- Compatibility -->
+            <label>Compatibility:</label>
+            <div>
+                <input type="checkbox" id="getsAlongDogs" name="compatibilityDogs" value="Yes">
+                <label for="getsAlongDogs">Gets along with other dogs</label><br>
+                <input type="checkbox" id="getsAlongCats" name="compatibilityCats" value="Yes">
+                <label for="getsAlongCats">Gets along with other cats</label><br>
+                <input type="checkbox" id="goodWithChildren" name="compatibilityChildren" value="Yes">
+                <label for="goodWithChildren">Suitable for a family with small children</label>
+            </div><br>
+
+            <!-- Submit and Clear Buttons -->
+            <input type="submit" value="Submit">
+            <input type="reset" value="Clear">
+        </form>
+        <div id="errorMessage" style="color: red;"></div>
+        <!-- Results will be displayed here -->
+        <% if (typeof pets !== 'undefined' && pets.length > 0) { %>
+            <div class="pet-container">
+                <% for(let i = 0; i < pets.length; i += 4) { %>
+                    <div class="pet-in-row">
+                        <% for(let j = i; j < i + 4; j++) { %>
+                            <% if(j < pets.length) { %>
+                                <div class="pet-info">
+                                    <img src="<%= pets[j].imageUrl %>" alt="Cute <%= pets[j].type %>" class="pet-image">
+                                    <h3><%= pets[j].name %></h3>
+                                    <p><strong>Type:</strong> <%= pets[j].type %></p>
+                                    <p><strong>Breed:</strong> <%= pets[j].breed %></p>
+                                    <p><strong>Age:</strong> <%= pets[j].age %></p>
+                                    <p><strong>Gender:</strong> <%= pets[j].gender %></p>
+                                    <p><strong>Get along with other cats:</strong> <%= pets[j].getAlongCats %></p>
+                                    <p><strong>Get along with other dogs:</strong> <%= pets[j].getAlongDogs %></p>
+                                    <p><strong>Good with children:</strong> <%= pets[j].goodWithChildren %></p>
+                                    <p><strong>Owner's Name:</strong> <%= pets[j].ownerName %></p>
+                                    <p><strong>About:</strong> <%= pets[j].comments %></p>
+                                    <button class="interested-button">Interested</button>
+                                </div>
+                            <% } %>
+                        <% } %>
+                    </div>
+                <% } %>
+            </div>
+        <% } else { %>
+            <p>No pets found matching your criteria.</p>
+        <% } %>
+    </main>
+    <%- include('footer.ejs') %>
+    <script src="/js/Q7.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adopt A Pet</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('header.ejs') %>
+    <%- include('navigation.ejs') %>
+    <main>
+        <h2>Browse Available Pets</h2>
+        <div class="pet-container">
+            <% for(let i = 0; i < pets.length; i += 4) { %>
+                <div class="pet-in-row">
+                    <% for(let j = i; j < i + 4; j++) { %>
+                        <% if(j < pets.length) { %>
+                            <div class="pet-info">
+                                <img src="<%= pets[j].imageUrl %>" alt="Cute <%= pets[j].type %>" class="pet-image">
+                                <h3><%= pets[j].name %></h3>
+                                <p><strong>Type:</strong> <%= pets[j].type %></p>
+                                <p><strong>Breed:</strong> <%= pets[j].breed %></p>
+                                <p><strong>Age:</strong> <%= pets[j].age %></p>
+                                <p><strong>Gender:</strong> <%= pets[j].gender %></p>
+                                <p><strong>Get along with other cats:</strong> <%= pets[j].getAlongCats %></p>
+                                <p><strong>Get along with other dogs:</strong> <%= pets[j].getAlongDogs %></p>
+                                <p><strong>Good with children:</strong> <%= pets[j].goodWithChildren %></p>
+                                <p><strong>Owner's Name:</strong> <%= pets[j].ownerName %></p>
+                                <p><strong>About:</strong> <%= pets[j].about %></p>
+                                <button class="interested-button">Interested</button>
+                            </div>
+                        <% } %>
+                    <% } %>
+                </div>
+            <% } %>
+        </div>
+    </main>
+    <%- include('footer.ejs') %>
+    <script src="/js/Q7.js"></script>
+</body>
+</html>

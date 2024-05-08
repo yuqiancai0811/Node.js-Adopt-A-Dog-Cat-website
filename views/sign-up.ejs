@@ -1,0 +1,30 @@
+
+<!--create an account-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adopt A Pet</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('header.ejs') %>
+    <%- include('navigation.ejs') %>
+    <main>
+        <h2>Create an account</h2>
+        <form id="createAccountForm" action="/sign-up" method="post">
+            <input type="text" name="username" placeholder="Enter your name"><br>
+            (contain letters both uppercases and owercases and digits only)<br>
+            <input type="password" name="password"placeholder="Enter your password"><br>
+            (must be at least 4 characters long which contain at least one letter and at least one digit)<br>
+            <input type="submit" value="Submit">
+        </form>
+        <% if (message) { %>
+            <p style="color: chocolate;"><%= message %></p>
+          <% } %>
+    </main>
+    <%- include('footer.ejs') %>
+    <script src="/js/Q7.js"></script>
+    <script src="/js/accountValidation.js"></script>
+</body>
+</html>

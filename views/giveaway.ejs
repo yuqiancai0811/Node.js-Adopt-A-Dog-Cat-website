@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adopt A Pet</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    
+    <%- include('header.ejs') %>
+    <%- include('navigation.ejs') %>
+    <main>
+        <h2>Have a Pet to Give Away</h2>
+        <form id="giveAwayForm" action="/giveaway" method="post" enctype="multipart/form-data">
+            <table class="form-table">
+                <!-- Pet Type -->
+                <tr>
+                    <td><label for="petType2">Cat or Dog:</label></td>
+                    <td>
+                        <select id="petType2" name="petType" size="1" required>
+                            <option value="" label="Please select a pet type" disabled selected></option>
+                            <option value="Cat">Cat</option>
+                            <option value="Dog">Dog</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <!-- Breed -->
+                <tr>
+                    <td><label for="breed2">Breed:</label></td>
+                    <td>
+                        <select id="breed2" name="breed" required>
+                            <option value="" label="Please select a pet breed" disabled selected></option>
+                            <option value="Others">Others</option>
+                            <option value="Mix">Mix</option>
+                            <option value="Shorthair">Shorthair</option>
+                            <option value="Longhair">Longhair</option>
+                            <option value="Ragdoll">Ragdoll</option>
+                            <option value="Shiba">Shiba</option>
+                            <option value="Husky">Husky</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <!-- Age -->
+                <tr>
+                    <td><label for="age2">Age:</label></td>
+                    <td>
+                        <select id="age2" name="age" required>
+                            <option value="" label="Please select an age range" disabled selected></option>
+                            <option value="Puppy/Kitten">Puppy/Kitten</option>
+                            <option value="Young">Young</option>
+                            <option value="Adult">Adult</option>
+                            <option value="Senior">Senior</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <!-- Gender -->
+                <tr>
+                    <td><label for="gender2">Gender:</label></td>
+                    <td>
+                        <select id="gender2" name="gender" required>
+                            <option value="" label="Please select a pet gender" disabled selected></option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <!-- Compatibility -->
+                <tr>
+                    <td>Compatibility:</td>
+                    <td>
+                        <label><input type="checkbox" id="getsAlongDogs" name="compatibilityDogs" value="Dogs"> Gets along with other dogs</label><br>
+                        <label><input type="checkbox" id="getsAlongCats" name="compatibilityCats" value="Cats"> Gets along with other cats</label><br>
+                        <label><input type="checkbox" id="goodWithChildren" name="compatibilityChildren" value="Children"> Good with children</label>
+                    </td>
+                </tr>
+
+                <!-- Picture Upload -->
+                <tr>
+                    <td><label for="petPicture">Pet Picture:</label></td>
+                    <td>
+                        <input type="file" id="petPicture" name="petPicture" accept="image/*">
+                    </td>
+                </tr>
+
+                <!-- Comment Area -->
+                <tr>
+                    <td><label for="comments">Comments:</label></td>
+                    <td><textarea id="comments" name="comments" rows="4" required placeholder="Tell us about the animal"></textarea></td>
+                </tr>
+
+                <!-- Owner's Information -->
+                <tr>
+                    <td><label for="ownerName">Owner's Name:</label></td>
+                    <td><input type="text" id="ownerName" name="ownerName" required placeholder="Family and Given Name"></td>
+                </tr>
+                <tr>
+                    <td><label for="ownerEmail">Owner's Email:</label></td>
+                    <td><input type="email" id="ownerEmail" name="ownerEmail" required placeholder="email@example.com"></td>
+                </tr>
+            </table>
+            
+            <!-- Submit and Clear Buttons -->
+            <div class="button-container" style="text-align: left;">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Clear">
+            </div>
+        </form>
+        <div id="errorMessage2" style="color: red;"></div>
+        <% if (message) { %>
+            <p style="color: chocolate;"><%= message %></p>
+        <% } %>
+    </main>
+    <%- include('footer.ejs') %>
+    <script src="/js/Q7.js"></script>
+</body>
+</html>

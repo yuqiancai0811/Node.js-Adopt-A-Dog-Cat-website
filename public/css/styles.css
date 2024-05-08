@@ -1,0 +1,172 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style for the header, including the logo and site name */
+header {
+    background-color: #f4f1cc;
+    padding: 10px;
+    text-align: center;
+}
+
+header img {
+    width: 100px;
+}
+
+header h1 {
+    display: inline;
+    color: rgb(231, 123, 87);
+}
+
+/* Style for the navigation side menu */
+nav {
+    background-color: #e9ecef;
+    padding: 10px;
+    width: 200px;
+    float: left;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li a {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+nav ul li a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Style for the main content area */
+main {
+    margin-left: 220px;
+    padding: 20px;
+    background-color: antiquewhite;
+    line-height: 2;
+}
+
+/* Style for the footer */
+footer {
+    clear: both;
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #ffc107;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+.pet-container {
+    background: #fff;
+    /* White background for the pet card */
+    border: 1px solid #ddd;
+    /* Subtle border */
+    overflow: hidden;
+    /* Ensures nothing spills out of the card */
+    display: flex;
+    flex-direction: column;
+}
+
+.pet-in-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    /* This will make sure all pet-info blocks stretch to the same height */
+    margin-bottom: 20px;
+}
+
+.pet-image {
+    object-fit: cover;
+    width: 230px;
+    height: 230px;
+    border-radius: 40px;
+}
+
+.pet-info {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    text-align: left;
+    margin: 10px;
+    width: calc(25% - 20px);
+    justify-content: space-between;
+
+}
+
+.interested-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: auto;
+    margin: 20px auto;
+}
+
+.interested-button:hover {
+    background-color: #45a049;
+}
+
+form {
+    font-size: large;
+}
+
+input {
+    font-size: medium;
+}
+
+select {
+    font-size: medium;
+}
+
+.button-container {
+    text-align: right;
+    padding: 10px;
+}
+
+.auth-button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    text-decoration: none;
+    margin: 5px 0;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.auth-button:hover {
+    background-color: #45a049;
+    /* Darker shade on hover */
+}
+
+#ownerEmail {
+    width: 100%;
+    max-width: 300px;
+}
+
+#ownerName {
+    width: 100%;
+    max-width: 300px;
+}

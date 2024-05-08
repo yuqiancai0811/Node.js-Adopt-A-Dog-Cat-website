@@ -1,0 +1,21 @@
+
+<!--Log out -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adopt A Pet</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('header.ejs') %>
+    <%- include('navigation.ejs') %>
+    <main>
+      
+        <% if (message) { %>
+            <p style="color: chocolate;"><%= message %></p>
+          <% } %>
+    </main>
+    <%- include('footer.ejs') %>
+</body>
+</html>
